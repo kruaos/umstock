@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>Show Products</title>
+<script src="prototype.js" language="javascript" type="text/javascript">
+</script>
+<script language="javascript">
+// ฟังก์ชันแสดงรายการสินค้า
+function Product(Div){
+	var params="productID";
+	var url="listProduct.php"; // ชื่อไฟล์ที่กำหนดให้ทำการประมวลผลเพื่อแสดงรายการสินค้า
+	var Addnew=new Ajax.Updater(Div,url, {method: "get", parameters: params});
+}
+// ฟังก์ชันลบรายการสินค้าออกจากตะกร้า
+function removeBasket(productID, Div){
+	var params="productID="+productID; // ตัวแปร ProductID สำหรับเก็บรหัสสินค้าเพื่อส่งไปยัง removeBasket.php
+	var url="removeBasket.php"; // ชื่อไฟล์ที่กำหนดให้ทำการประมวลผลเพื่อลบรายการสินค้าออกจากตะกร้า
+	var Addnew=new Ajax.Updater(Div,url, {method: "get", parameters: params});
+}
+// ฟังก์ชันเพิ่มรายการสินค้าลงตะกร้า
+function DisplayBasket(productID, Div)
+{
+	var params="productID="+productID; // ตัวแปร ProductID สำหรับเก็บรหัสสินค้าเพื่อส่งไปยัง addBasket.php
+	var url="addBasket.php"; // ชื่อไฟล์ที่กำหนดให้ทำการประมวลผลเพื่อเพิ่มรายการสินค้าลงตะกร้า
+	var Addnew=new Ajax.Updater(Div,url, {method: "get", parameters: params});
+	}
+</script>
+</head>
+
+<body onLoad="Product('product')"> <!- เรียกฟังก์ชัน Product เพื่อให้แสดงรายการสินค้าเมื่อ load หน้านี้ขึ้นมา
+<table width="884" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+        <b>รายการสินค้า </b><p><!- ตำแหน่งแสดงรายการสินค้า
+        <td align="center" ><div id="product"></div></td>	
+        </tr>
+        <tr>
+        <!- ตำแหน่งแสดงสินค้าในตะกร้า	
+        <td align="center" ><div id="orders">*** No item in the basket ***</div></td>
+      </tr>
+</body>
+</html>
