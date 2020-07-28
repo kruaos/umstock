@@ -76,14 +76,23 @@ foreach ($product_detil_orderfile as $rspro){
           <td>ยอดยกมาปีงบประมาณ <?php echo ($YearStartAccount+543);  ?></td>
           <td></td>
           <td style="text-align:right;"><?php echo $suminlastAcc;  ?></td>
-          <td style="text-align:right;"><?php echo $price;  ?></td>
-          <td style="text-align:right;"><?php echo number_format(abs($suminlastAcc*$price));  ?></td>
-          <td></td>
+          <td style="text-align:right;"><?php echo number_format($price,2);  ?></td>
+          <td style="text-align:right;">
+            <?php 
+            $ShowSumAmount= $suminlastAcc*$price;  
+            echo number_format($ShowSumAmount,2);  
+            ?>
+          </td>          <td></td>
           <td></td>
           <td></td>
           <td></td>
           <td style="text-align:right;"><?php echo $amushow=$suminlastAcc;  ?></td>
-          <td style="text-align:right;"><?php echo number_format(abs($suminlastAcc*$price));  ?></td>
+          <td style="text-align:right;">
+            <?php 
+            $ShowSumAmount= abs($suminlastAcc*$price);  
+            echo number_format($ShowSumAmount,2);  
+            ?>
+          </td>
         </tr>
     <?php
     $sellerName="";
@@ -137,14 +146,14 @@ foreach ($product_detil_orderfile as $rspro){
           $de1=0;
           $de2=0;
           $de3=0;
-          $wi1=number_format(abs($amount)); 
+          $wi1=abs($amount); 
           $wi11=$amount; 
-          $wi2=number_format($productprice);
-          $wi3=number_format(abs($amount)*($productprice));
+          $wi2=$productprice;
+          $wi3=(abs($amount))*($productprice);
       }else if($amountcheck=='in'or'am'){
-          $de1=number_format($amount);
-          $de2=number_format($productprice);
-          $de3=number_format($amount*$productprice);
+          $de1=$amount;
+          $de2=$productprice;
+          $de3=$amount*$productprice;
           $wi11=null; 
           $wi1=0;
           $wi2=0;
@@ -152,14 +161,14 @@ foreach ($product_detil_orderfile as $rspro){
         } ?>
       <td style="text-align:right;" ><?php echo  $NumProductID; ?></td>    
       <td style="text-align:right;" ><?php echo  $de1; ?></td>
-      <td style="text-align:right;" ><?php echo  $de2; ?></td>
-      <td style="text-align:right;" ><?php echo  $de3; ?></td>
+      <td style="text-align:right;" ><?php echo  number_format($de2,2); ?></td>
+      <td style="text-align:right;" ><?php echo  number_format($de3,2); ?></td>
       <td style="text-align:right;" ></td>
       <td style="text-align:right;" ><?php echo  $wi1; ?></td>
-      <td style="text-align:right;" ><?php echo  $wi2; ?></td>
-      <td style="text-align:right;" ><?php echo  $wi3; ?></td>
+      <td style="text-align:right;" ><?php echo  number_format($wi2,2); ?></td>
+      <td style="text-align:right;" ><?php echo  number_format($wi3,2); ?></td>
       <td style="text-align:right;" ><?php   $amushow=($amushow+$de1)+$wi11; echo  number_format($amushow);?></td>
-      <td style="text-align:right;" ><?php   $totalshow=$amushow*$productprice; echo number_format($totalshow); ?></td>
+      <td style="text-align:right;" ><?php   $totalshow=$amushow*$productprice; echo number_format($totalshow,2); ?></td>
 
     </tr> 
     <?php 
@@ -187,7 +196,7 @@ foreach ($product_detil_orderfile as $rspro){
           <td style="text-align:right;" ><?php echo  $productprice; ?></td>
           <td style="text-align:right;" ><?php echo  number_format($showout*$productprice); ?></td>
           <td style="text-align:right;" ><?php echo  number_format($sumamushow) //$sumamoute=number_format($showinc-$showout); ?></td>
-          <td style="text-align:right;" ><?php echo   number_format($sumtotalshow) //$totalshow; ?></td>
+          <td style="text-align:right;" ><?php echo   number_format($sumtotalshow,2) //$totalshow; ?></td>
         </tr>
 <?php 
     }

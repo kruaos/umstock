@@ -63,28 +63,30 @@
         <a href="<?php echo site_url('report/ReportDetail/'.$productID.'/'.$YearAccount);?>"><?php echo $productName;?></a>
       </td>
  
-    <td ><?= number_format($productPrice)." บาท"; ?></td>
+          <td  class='text-right'>
+            <?php echo number_format($productPrice,2)." บาท"; ?>
+          </td>
           <td class='text-right'>
-          <?php 
-          $YearStartAccount_LastAcc=$YearStartAccount-1;
-          $YearEndAccount_LastAcc=$YearStartAccount;
-          $LastAccSum = "select SUM(a.amount*b.price)as'suminlastAcc' 
-          from tb_orderfile as a inner join tb_product as b on a.productID=b.id 
-          where a.statusfile='0' and a.productid=$productID and a.categoryID=$categoryID and a.statusfile=0
-              and createdate BETWEEN '$YearStartAccount_LastAcc-10-01' AND '$YearEndAccount_LastAcc-09-30'";
-          foreach ($this->db->query($LastAccSum)->result() as $RLastAccSum);
-          $LastAccount = $RLastAccSum->suminlastAcc;
-          $sql8 = "select SUM(a.amount*b.price)as'sumin' 
-          from tb_orderfile as a inner join tb_product as b on a.productID=b.id 
-          where a.statusfile='0' and (a.statusOrder='in' or a.statusOrder='am') 
-              and a.productid=$productID and a.categoryID=$categoryID and a.statusfile=0
-              and createdate BETWEEN '$YearStartAccount-10-01' AND '$YearEndAccount-09-30'";
-          foreach ($this->db->query($sql8)->result() as $row8);
-          $NowAccount=$row8->sumin;
-          // echo $LastAccSum;
-          $AmountAcc=$LastAccount+$NowAccount;
-          echo number_format($AmountAcc);
-          ?>          
+            <?php 
+            $YearStartAccount_LastAcc=$YearStartAccount-1;
+            $YearEndAccount_LastAcc=$YearStartAccount;
+            $LastAccSum = "select SUM(a.amount*b.price)as'suminlastAcc' 
+            from tb_orderfile as a inner join tb_product as b on a.productID=b.id 
+            where a.statusfile='0' and a.productid=$productID and a.categoryID=$categoryID and a.statusfile=0
+                and createdate BETWEEN '$YearStartAccount_LastAcc-10-01' AND '$YearEndAccount_LastAcc-09-30'";
+            foreach ($this->db->query($LastAccSum)->result() as $RLastAccSum);
+            $LastAccount = $RLastAccSum->suminlastAcc;
+            $sql8 = "select SUM(a.amount*b.price)as'sumin' 
+            from tb_orderfile as a inner join tb_product as b on a.productID=b.id 
+            where a.statusfile='0' and (a.statusOrder='in' or a.statusOrder='am') 
+                and a.productid=$productID and a.categoryID=$categoryID and a.statusfile=0
+                and createdate BETWEEN '$YearStartAccount-10-01' AND '$YearEndAccount-09-30'";
+            foreach ($this->db->query($sql8)->result() as $row8);
+            $NowAccount=$row8->sumin;
+            // echo $LastAccSum;
+            $AmountAcc=$LastAccount+$NowAccount;
+            echo number_format($AmountAcc);
+            ?>          
           </td>
           <td class='text-right'>
           <?php 
@@ -93,9 +95,10 @@
             where a.statusfile='0' and a.statusOrder='ou' and a.productid=$productID 
                 and a.categoryID=$categoryID and a.statusfile=0
                 and createdate BETWEEN '$YearStartAccount-10-01' AND '$YearEndAccount-09-30'";
-          foreach ($this->db->query($sql9)->result() as $row9)
+            foreach ($this->db->query($sql9)->result() as $row9)
 
-          echo  $sumout = number_format(abs($row9->sumout));
+            $sumout = abs($row9->sumout);
+            echo  number_format($sumout);
 
 ?>          
           </td>
@@ -115,7 +118,9 @@
           <?php 
           $suminall=$suminall+($row8->sumin);
           $sumoutall=$sumoutall+($row9->sumout);
-          echo   number_format($row8->sumin-abs($row9->sumout));
+          // echo   number_format(($row8->sumin)-abs($row9->sumout));
+          $ShowAmount=$AmountAcc-$sumout;
+          echo   number_format($ShowAmount,2);
           ?>          
           </td>
     </tr>
@@ -129,7 +134,11 @@
             <td  class='text-right'><?= number_format($suminall);?></td>
             <td  class='text-right'><?= number_format(abs($sumoutall));?></td>
             <td ></td>
-            <td  class='text-right'><?= number_format($suminall+$sumoutall);?></td>
+            <td  class='text-right'>
+              <?php 
+              $ShowAmountReport=$suminall+$sumoutall;
+              echo number_format($ShowAmountReport,2);
+              ?></td>
           </tr>
         </table>
 

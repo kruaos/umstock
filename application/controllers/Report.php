@@ -157,6 +157,7 @@ class report extends CI_Controller {
 
 	public function Categoryreporedetail()
 	{
+		$data['product_detil_orderfile']=$this->product_model->show_detail_product_from_orderfile($this->uri->segment(3));
 		$data['category']=$this->product_model->showorderfile($this->uri->segment(3));
 		$data['category_mix_product']=$this->product_model->show_product_by_catgory($this->uri->segment(3));
 
