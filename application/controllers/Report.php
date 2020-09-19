@@ -146,6 +146,16 @@ class report extends CI_Controller {
 		$this->load->view('template/footer');	
 	}
 
+	
+	public function CategoryReport64()
+	{
+		$this->load->view('template/header');
+		$this->load->view('members/chksession');
+		$this->load->view('navmenu');
+		$this->load->view('report/category_report_menu64');
+		$this->load->view('template/footer');	
+	}
+
 	public function CategoryReport()
 	{
 		$this->load->view('template/header');
