@@ -6,7 +6,6 @@ $dbname ="umcity_umstock";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-}
 echo "<form action='chk.php'><input type='text'name='idreport' placeholder='idreport'> tb_order</form>";
 echo "<form action='chk.php'><input type='text'name='idnum' placeholder='idnum'> tb_orderdetail</form>";
 echo "<form action='chk.php'><input type='text'name='idorder' placeholder='idorder'> tb_orderfile</form>";
