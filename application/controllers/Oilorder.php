@@ -23,7 +23,7 @@ class oilorder extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('oilorder/blank');
 		$this->load->view('template/footer');	
 	}
@@ -46,7 +46,7 @@ class oilorder extends CI_Controller {
 
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('oilorder/oil_booking_register',$data);
 		$this->load->view('oilorder/oil_booking_view',$data2);
 		$this->load->view('template/footer');	
@@ -91,7 +91,7 @@ class oilorder extends CI_Controller {
 
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 
 		$this->load->view('oilorder/oil_booking_show',$data2);
 		$this->load->view('print_btn');

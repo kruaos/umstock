@@ -18,7 +18,7 @@ class members extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('blank');
 		$this->load->view('template/footer');	
 	}
@@ -39,7 +39,7 @@ class members extends CI_Controller {
 		$data['show_department_all']=$this->members_model->show_department_all();
 
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('members/register_member',$data);
 		$this->load->view('template/footer');	
 	}
@@ -67,7 +67,7 @@ class members extends CI_Controller {
 
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('members/register_form_edit',$data);
 		$this->load->view('template/footer');	
 	}
@@ -88,7 +88,7 @@ class members extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('members/AuthMem_view_index');
 		$this->load->view('template/footer');	
 	}
@@ -102,7 +102,7 @@ class members extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('members/department_view_index');
 		$this->load->view('template/footer');	
 	}
@@ -111,7 +111,7 @@ class members extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('members/department_view_edit');
 		$this->load->view('template/footer');	
 	}
@@ -135,7 +135,7 @@ class members extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('members/members_management_index');
 		$this->load->view('template/footer');	
 	}
@@ -145,7 +145,7 @@ class members extends CI_Controller {
 		$data['member']=$this->members_model->members_show_profile($this->uri->segment(3));
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('members/members_management_edit',$data);
 		$this->load->view('template/footer');	
 	}

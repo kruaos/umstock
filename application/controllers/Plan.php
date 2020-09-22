@@ -24,7 +24,7 @@ class plan extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('order/plan_view_edit');
 		$this->load->view('template/footer');
 	}
@@ -46,7 +46,7 @@ class plan extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('blank');
 		$this->load->view('template/footer');	
 	}

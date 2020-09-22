@@ -21,7 +21,7 @@ class seller extends CI_Controller {
 		$date['quary']=$this->seller_model->seller_show_profile($this->uri->segment(3));
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('order/seller_view_edit',$date);
 		$this->load->view('template/footer');
 	}

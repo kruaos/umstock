@@ -24,7 +24,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('blank');
 		$this->load->view('template/footer');	
 	}
@@ -42,7 +42,7 @@ class report extends CI_Controller {
 
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/report_mange_product_order',$data);
 		$this->load->view('report/report_mange_car_order',$data);
 		$this->load->view('template/footer');
@@ -56,7 +56,7 @@ class report extends CI_Controller {
 
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('carorder/car_printorder_detail',$data1);
 		$this->load->view('oilorder/oil_printorder_detail',$data2);
 		$this->load->view('fixorder/fix_printorder_detail',$data3);
@@ -75,7 +75,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/Report_detail_print');
 		$this->load->view('template/footer');
 	}
@@ -84,7 +84,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('carorder/carorder_detail_printout');
 		$this->load->view('template/footer');
 	}
@@ -99,7 +99,7 @@ class report extends CI_Controller {
 
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/Report_Oder_view');
 		$this->load->view('report/report_car_order_show',$data);
 		$this->load->view('template/footer');
@@ -110,7 +110,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/Report_detail_print');
 		$this->load->view('template/footer');
 	}
@@ -123,7 +123,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/category_report_select');
 		$this->load->view('template/footer');	
 	}
@@ -132,7 +132,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/category_report_menu62');
 		$this->load->view('template/footer');	
 	}
@@ -141,7 +141,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/category_report_menu63');
 		$this->load->view('template/footer');	
 	}
@@ -151,7 +151,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/category_report_menu64');
 		$this->load->view('template/footer');	
 	}
@@ -160,7 +160,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/category_report_menu');
 		$this->load->view('template/footer');	
 	}
@@ -173,7 +173,7 @@ class report extends CI_Controller {
 
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/category_report_detail',$data);
 		$this->load->view('template/footer');	
 	}
@@ -183,7 +183,7 @@ class report extends CI_Controller {
 		$data['product_detil_orderfile']=$this->product_model->show_detail_product_from_orderfile($this->uri->segment(3));
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/product_detail_report',$data);
 		$this->load->view('template/footer');	
 	}
@@ -193,7 +193,7 @@ class report extends CI_Controller {
 		$data['query_showall']=$this->product_model->show_product_show_all();
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/product_all_item',$data);
 		$this->load->view('template/footer');	
 	}	
@@ -204,7 +204,7 @@ class report extends CI_Controller {
 		$data['show_detail_tb_product']=$this->product_model->show_detail_tb_product($this->uri->segment(3));
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/product_detail_report_backtoshowall',$data);
 		$this->load->view('template/footer');	
 	}
@@ -213,7 +213,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/report_by_customer');
 		$this->load->view('template/footer');	
 	}	
@@ -222,7 +222,7 @@ class report extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/Report_Customer_detail');
 		$this->load->view('template/footer');	
 	}

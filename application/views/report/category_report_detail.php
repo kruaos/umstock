@@ -76,16 +76,17 @@
                 and createdate BETWEEN '$YearStartAccount_LastAcc-10-01' AND '$YearEndAccount_LastAcc-09-30'";
             foreach ($this->db->query($LastAccSum)->result() as $RLastAccSum);
             $LastAccount = $RLastAccSum->suminlastAcc;
-            $sql8 = "select SUM(a.amount*b.price)as'sumin' 
+            $sql8 = "SELECT SUM(a.amount*b.price)as'sumin' 
             from tb_orderfile as a inner join tb_product as b on a.productID=b.id 
             where a.statusfile='0' and (a.statusOrder='in' or a.statusOrder='am') 
                 and a.productid=$productID and a.categoryID=$categoryID and a.statusfile=0
                 and createdate BETWEEN '$YearStartAccount-10-01' AND '$YearEndAccount-09-30'";
             foreach ($this->db->query($sql8)->result() as $row8);
             $NowAccount=$row8->sumin;
-            // echo $LastAccSum;
             $AmountAcc=$LastAccount+$NowAccount;
+            // echo $LastAccount;
             echo number_format($AmountAcc);
+            // echo $sql8;
             ?>          
           </td>
           <td class='text-right'>

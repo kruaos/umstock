@@ -19,7 +19,7 @@ class home extends CI_Controller {
 		{		
 
 		$this->load->view('template/header_login');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('login_view');
 		$this->load->view('template/footer');
 		}else{
@@ -42,7 +42,7 @@ class home extends CI_Controller {
 
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('main_view');
 		$this->load->view('report/Report_Oder_show');
 		$this->load->view('report/report_car_order_show',$data);
@@ -55,7 +55,7 @@ class home extends CI_Controller {
 	public function adminumong()
 	{
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('admin_umong');
 		$this->load->view('template/footer_plus_table');
 	}

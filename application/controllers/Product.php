@@ -35,7 +35,7 @@ class product extends CI_Controller {
 	{
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('order/product_view_edit');
 		$this->load->view('template/footer');
 	}
@@ -44,7 +44,7 @@ class product extends CI_Controller {
 	{
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/Report_Oder_view');
 		$this->load->view('template/footer');
 	}
@@ -54,7 +54,7 @@ class product extends CI_Controller {
 	{
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('report/Report_detail_print');
 		$this->load->view('template/footer');
 	}
@@ -71,7 +71,7 @@ class product extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('product/category');
 		$this->load->view('template/footer');	
 	}
@@ -87,7 +87,7 @@ class product extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('navmenu');
+		$this->load->view('NavMenuV2');
 		$this->load->view('blank');
 		$this->load->view('template/footer');	
 	}
