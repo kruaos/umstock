@@ -8,8 +8,21 @@
 ?>
 <div class="container" style="margin-top:70px" >
   <div class="row" >
-    <div class="col-12 ">
-  <h3>เมนูการอนุมัติพัสดุ</h3>
+    <div class="col-12 form-inline ">
+      <div class="form-group col-4">
+        <h3 >เมนูการอนุมัติพัสดุ</h3> 
+      </div>
+      <div class="form-group col-8 " >
+        <form method="POST" class="form-group" action="<?php echo site_url('order/approval/');?>" >
+        <label class="form-group"  for="">เลือกปีงบประมาณ</label>
+        <select name="yearPlan" id="">
+          <option value="2562" <?php echo  set_select('yearPlan', '2562'); ?>>2562</option>
+          <option value="2563" <?php echo  set_select('yearPlan', '2563', TRUE); ?>>2563</option>
+          <option value="2564" <?php echo  set_select('yearPlan', '2564'); ?>>2564</option>
+        </select>
+        <input type="submit">
+      </form>
+    </div>
     </div>
   <div class="col ">
   <table class="table  table-hover small table-sm">
@@ -27,7 +40,15 @@
     <tbody>
 <?php 
 $num=1;
-$sql = "select * from tb_order where status=1 "; 
+
+if(isset($_POST['yearPlan'])<>null){
+  $yearPlan=$_POST['yearPlan']-543;
+  $yearPlanAfter=$_POST['yearPlan']-544;
+  $sql = "SELECT * from tb_order where status=1 and createdate between '$yearPlanAfter-10-01' and '$yearPlan-09-30'"; 
+  // echo $sql;
+}else{
+  $sql = "select * from tb_order where status=1 "; 
+}
 $result = $this->db->query($sql);
 foreach ($result->result() as $row) {
   $memberID = $row->memberID; 

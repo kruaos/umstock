@@ -10,22 +10,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
+      <?php 
+      $sess_authority=$this->session->userdata('authority');
+      $sess_memberid=$this->session->userdata('userid');
+      
+      ?>
 <?php 
     if(empty($_SESSION['authority'])){
-?>
+      ?>
 <?php    
     }else{
   if($_SESSION['authority']=='o'){
 
   }else{
-?> 
+    ?> 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="" id="dropdown05" data-toggle="dropdown" 
         aria-haspopup="true" aria-expanded="false"> <i class="fas fa-box"></i> เบิกพัสดุ </a>
         <div class="dropdown-menu" aria-labelledby="dropdown05">
           <a class="dropdown-item" href="<?php echo site_url('/members/edit');?>">1.1. แก้ไขข้อมูลส่วนตัว</a>
           <a class="dropdown-item" href="<?php echo site_url('/order/basket');?>">1.2. ทำรายการเบิกพัสดุ</a>
+          <a class="dropdown-item" href="<?php echo site_url('');?>">1.3. คู่มือการใช้งาน</a>
         </div>
+
       </li>
 
 <?php 
@@ -42,8 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <a class="dropdown-item" href="<?php echo site_url('/order/addproduct');?>">2.2. เพิ่มรายการพัสดุ </a>
           <a class="dropdown-item" href="<?php echo site_url('/order/seller');?>">2.3. เพิ่มรายการร้านค้า </a>
           <hr>
-          <a class="dropdown-item" href="<?php echo site_url('/order/approval');?>">2.4. แก้ไขรายการพัสดุ </a>
-          <a class="dropdown-item" href="<?php echo site_url('');?>">2.5. ตั้งค่าพัสดุในรายการ </a>
+          <a class="dropdown-item" href="<?php echo site_url('/order/approval');?>">2.4. อนุมัติคำขอพัสดุ </a>
+          <a class="dropdown-item" href="<?php echo site_url('');?>">2.5. แก้ไขรายการพัสดุ </a>
+          <a class="dropdown-item" href="<?php echo site_url('');?>">2.6. โอนพัสดุ(ยอดยกไป) </a>
           <a class="dropdown-item" href="<?php echo site_url('/report/ReportProduct');?>" >2.9. รายงานรับ-จาย พัสดุ </a>
 
         </div>
@@ -53,11 +61,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <a class="nav-link dropdown-toggle" href="" id="dropdown05" data-toggle="dropdown" 
         aria-haspopup="true" aria-expanded="false"><i class="fas fa-folder-open"></i>  จัดการบัญชี/โครงการ</a>
         <div class="dropdown-menu" aria-labelledby="dropdown05">
-          <a class="dropdown-item" href="<?php echo site_url('/order/plan');?>">2.1. เพิ่มแผนงาน</a>
-          <a class="dropdown-item" href="<?php echo site_url('/product/category');?>">2.2. เพิ่มโครงการ</a>
-          <a class="dropdown-item" href="<?php echo site_url('/product/category');?>">2.3. แก้ไขบัญชี/โครงการ</a>
+          <a class="dropdown-item" href="<?php echo site_url('/order/plan');?>">3.1. เพิ่มแผนงาน</a>
+          <a class="dropdown-item" href="<?php echo site_url('/product/category');?>">3.2. เพิ่มโครงการ</a>
+          <a class="dropdown-item" href="<?php echo site_url('/product/category');?>">3.3. แก้ไขบัญชี/โครงการ</a>
           <hr>
-          <a class="dropdown-item" href="<?php echo site_url('/report/CategoryReportSelect');?>">2.8. รายงานบัญชี/ โครงการ </a>
+          <a class="dropdown-item" href="<?php echo site_url('');?>">3.4. โอนบัญชี/โครงการ(ยอดยกไป) </a>
+          <a class="dropdown-item" href="<?php echo site_url('/report/CategoryReportSelect');?>">3.5. รายงานบัญชี/ โครงการ </a>
 
         </div>
       </li>
@@ -73,17 +82,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <a class="dropdown-item" href="<?php echo site_url('/members/AuthMem');?>">4.1. กำหนดสิทธิผู้ใช้บริการ </a>
           <hr>
           <a class="dropdown-item" href="<?php echo site_url('/report/ReportCustomer');?>">4.4. รายงานรายบุคคล</a>
-          <?php 
-          $sess_authority=$this->session->userdata('authority');
-          $sess_memberid=$this->session->userdata('userid');
-          
-          ?>
         </div>
       </li>
       <?php
   }
   ?> 
-
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="" id="dropdown05" 
   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-file-alt"></i> เอกสาร/รายงาน</a>
@@ -94,11 +97,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 </li>     
 <?php 
-      if($sess_memberid=='43'or $sess_authority=='m')
-          {
+      if($sess_memberid=='43'or $sess_authority=='m'){
 ?>
-
-          
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="" id="dropdown05" 
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user-shield"></i> Admin</a>
