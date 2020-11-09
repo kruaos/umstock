@@ -108,9 +108,9 @@
           if ($sumamo == 0) {
             echo " <span class='badge badge-danger'>หมด</span>";
           } elseif ($sumamo <= 2) {
-            echo " <span class='badge badge-warning'> จำนวน ".$sumamo." ชิ้น</span>";
+            echo " <span class='badge badge-warning'> จำนวน ".number_format($sumamo,2)." ชิ้น</span>";
           } else{
-            echo $sumamo;
+            echo number_format($sumamo,2);
           }
         }
         ?> 
