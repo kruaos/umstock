@@ -30,10 +30,10 @@
           <th width='5%'><b>ลำดับ</b></th>
           <th width='20%'><b>ชื่อพัสดุ</b></th>
           <th width='10%'><b>ราคา</b></th>
-          <th width='10%'><b>รับ</b></th>
-          <th width='10%'><b>จ่าย</b></th>
-          <th width='10%'><b>คงเหลือ</b></th>
-          <th width='10%'><b>จำนวน</b></th>
+          <th width='10%'><b>รับ (บาท)</b></th>
+          <th width='10%'><b>จ่าย (บาท)</b></th>
+          <th width='10%'><b>คงเหลือ(บาท)</b></th>
+          <th width='10%'><b>คงเหลือ(ชิ้น)</b></th>
       </tr>
     
     <?php
@@ -85,7 +85,7 @@
             $NowAccount=$row8->sumin;
             $AmountAcc=$LastAccount+$NowAccount;
             // echo $LastAccount;
-            echo number_format($AmountAcc);
+            echo number_format($AmountAcc,2);
             // echo $sql8;
             ?>          
           </td>
@@ -99,21 +99,9 @@
             foreach ($this->db->query($sql9)->result() as $row9)
 
             $sumout = abs($row9->sumout);
-            echo  number_format($sumout);
+            echo  number_format($sumout,2);
 
 ?>          
-          </td>
-          <td>
-          <?php
-          if ($sumamo == 0) {
-            echo " <span class='badge badge-danger'>หมด</span>";
-          } elseif ($sumamo <= 2) {
-            echo " <span class='badge badge-warning'> จำนวน ".number_format($sumamo,2)." ชิ้น</span>";
-          } else{
-            echo number_format($sumamo,2);
-          }
-        }
-        ?> 
           </td>
           <td  class='text-right'>
           <?php 
@@ -123,6 +111,18 @@
           $ShowAmount=$AmountAcc-$sumout;
           echo   number_format($ShowAmount,2);
           ?>          
+          </td>
+          <td>
+          <?php
+          if ($sumamo == 0) {
+            echo " <span class=' badge-danger'> หมด </span>";
+          } elseif ($sumamo <= 2) {
+            echo " <span class=' badge-warning'> จำนวน ".number_format($sumamo,2)." ชิ้น </span>";
+          } else{
+            echo number_format($sumamo,2);
+          }
+        }
+        ?> 
           </td>
     </tr>
 
@@ -134,12 +134,12 @@
             <td ></td>
             <td  class='text-right'><?= number_format($suminall);?></td>
             <td  class='text-right'><?= number_format(abs($sumoutall));?></td>
-            <td ></td>
             <td  class='text-right'>
               <?php 
               $ShowAmountReport=$suminall+$sumoutall;
               echo number_format($ShowAmountReport,2);
               ?></td>
+            <td ></td>
           </tr>
         </table>
 
