@@ -132,8 +132,8 @@
             <td ></td>
             <td >รวม</td>
             <td ></td>
-            <td  class='text-right'><?= number_format($suminall);?></td>
-            <td  class='text-right'><?= number_format(abs($sumoutall));?></td>
+            <td  class='text-right'><?= number_format($suminall,2);?></td>
+            <td  class='text-right'><?= number_format(abs($sumoutall),2);?></td>
             <td  class='text-right'>
               <?php 
               $ShowAmountReport=$suminall+$sumoutall;

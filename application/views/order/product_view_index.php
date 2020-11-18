@@ -86,14 +86,14 @@
           echo "<a href='orderdetail.php?productid=" . $productID . "'>" . $productName . "</a>";
           ?>
         </td>
-        <td><?php echo number_format($productPrice)?></td>
+        <td><?php echo number_format($productPrice,2)?></td>
         <td>   <?php
             if ($sumamo==0){
-              echo "<span class='badge badge-danger'>หมด</span>";
+              echo "<span class=' badge-danger'>หมด</span>";
             }else if($sumamo<=2){
-              echo " <span class='badge badge-warning'> เหลือ ".$sumamo." ชิ้น</span> ";          
+              echo " <span class=' badge-warning'> เหลือ ".number_format($sumamo,2)." ชิ้น</span> ";          
             }else{
-              echo $sumamo;
+              echo number_format($sumamo,2);
             }
           ?> 
         </td>

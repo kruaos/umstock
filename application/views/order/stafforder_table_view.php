@@ -84,13 +84,13 @@
           $de1 = "";
           $de2 = "";
           $de3 = "";
-          $wi1 = abs($row->amount);
-          $wi2 = $productprice;
-          $wi3 = number_format($wi1 * $wi2);
+          $wi1 = number_format(abs($row->amount),2);
+          $wi2 = number_format($productprice,2);
+          $wi3 = number_format(($wi1 * $wi2),2);
         } else {
-          $de1 = $row->amount;
-          $de2 = $productprice;
-          $de3 = number_format($de1 * $de2);
+          $de1 = number_format($row->amount,2);
+          $de2 = number_format($productprice,2);
+          $de3 = number_format(($de1 * $de2),2);
           $wi1 = "";
           $wi2 = "";
           $wi3 = "";
