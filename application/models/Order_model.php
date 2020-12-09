@@ -122,8 +122,17 @@ class order_model  extends CI_Model
     $sql_del_order_from_tb_orderfile="update tb_orderfile set statusfile='1' where orderFileID=$orderFileID";
     $this->db->query($sql_del_order_from_tb_orderfile);
     redirect(site_url('order/stafforder/'.$categoryID));
- 
-  }
+   }
+
+  //  -----------------------------
+  //  การแก้ไข แก้ไขตามที่ต้องการ
+  //  -----------------------------
+  //  public function edit_order_from_tb_orderfile($orderFileID,$categoryID)
+  //  {
+  //    $sql_edit_order_from_tb_orderfile="update tb_orderfile set statusfile='1' where orderFileID=$orderFileID";
+  //    $this->db->query($sql_edit_order_from_tb_orderfile);
+  //    redirect(site_url('order/stafforder/'.$categoryID));
+  //   }
 
 
   public function del_order_from_tb_order($order_id)

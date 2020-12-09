@@ -102,7 +102,8 @@ class order extends CI_Controller {
 
 	public function stafforder($categoryID)
 	{
-		$this->load->view('template/header');
+		// $this->load->view('template/header');
+		$this->load->view('template/table');
 		$this->load->view('members/chksession');
 		$this->load->view('NavMenuV2');
 		$this->load->view('order/stafforder_input_view');
@@ -122,6 +123,16 @@ class order extends CI_Controller {
 		$categoryID=$this->uri->segment('4');
 		$this->order_model->del_order_from_tb_orderfile($orderFileID,$categoryID);
 	}
+
+//  -----------------------------
+// เพิ่มส่วนแก้ไข การบันทึกแก้ไขรายการรับจ่ายสินค้า 
+//  -----------------------------
+	// public function stafforderedit()
+	// {
+	// 	$orderFileID=$this->uri->segment('3');
+	// 	$categoryID=$this->uri->segment('4');
+	// 	$this->order_model->del_order_from_tb_orderfile($orderFileID,$categoryID);
+	// }
 
 
 	public function plan()

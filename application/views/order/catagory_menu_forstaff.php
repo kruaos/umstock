@@ -1,8 +1,9 @@
     <table class="table table-hover  " ><tr >
           <th width='5%'><b>ลำดับ</b></th>
           <th width='30%'><b>บัญชี/โครงการ</b></th>
-          <th width='20%'><b>แผนงาน</b></th>
+          <th width='15%'><b>แผนงาน</b></th>
           <th width='30%'><b>หน่วยรับผิดชอบ</b></th>
+          <th width='20%'><b>ดำเนินการ</b></th>
         </tr>
     	<?php 
     		$num=0;
@@ -31,6 +32,16 @@
 				echo "] ".$query->row('departmentName');
 
 			echo "</td>";
+			echo "
+			<td>
+				<a herf='' class='btn btn-success btn-sm'> 
+					จัดเก็บ
+				</a>
+				<a herf='' class='btn btn-danger btn-sm'> 
+					ยกเลิก
+				</a>
+			</td>
+			";
  		echo "</tr>";
    		} 
 		?>
