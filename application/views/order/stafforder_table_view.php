@@ -130,7 +130,7 @@
                 onclick="if(confirm('ยืนยันการลบ')) return true; else return false;" >
                 <div class='small'>ลบ</div>
               </a>
-              <a class="btn btn-warning btn-sm" href="#<?php //echo site_url('order/stafforderedit/');?><?php //echo $row->orderFileID; ?>/<?php echo $row->categoryID; ?>">
+              <a class="btn btn-warning btn-sm disabled" href="<?php echo site_url('order/stafforderedit/');?><?php echo $row->orderFileID; ?>/<?php echo $row->categoryID; ?>" >
                 <div class='small'>แก้ไข</div>
               </a>
             </td>
