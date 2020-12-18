@@ -25,7 +25,7 @@ class order extends CI_Controller {
 
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('order/catagory_menu_foruser',$data);
 		$this->load->view('template/footer');
 	}
@@ -36,7 +36,7 @@ class order extends CI_Controller {
 
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('order/seller_view_index');
 		$this->load->view('template/footer');
 	}
@@ -53,7 +53,7 @@ class order extends CI_Controller {
 
 		$this->load->view('template/header_plus_table');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 	    $data["rsIn"] = $this->Product_model->product_show_all_by_categoryID($categoryID);
  		$data["rsOut"] = $this->Product_model->ShowProAndBas($categoryID);
         $data["links"] = $this->pagination->create_links();
@@ -94,7 +94,7 @@ class order extends CI_Controller {
 
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$data['query']=$this->order_model->showcatgory();
 		$this->load->view('order/catagory_menu_forstaff',$data);
 		$this->load->view('template/footer');
@@ -105,7 +105,7 @@ class order extends CI_Controller {
 		// $this->load->view('template/header');
 		$this->load->view('template/table');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('order/stafforder_input_view');
 		$this->load->view('order/stafforder_table_view');
 		// $this->load->view('template/footer');
@@ -133,7 +133,7 @@ class order extends CI_Controller {
 		$this->load->view('template/header');
 		// $this->load->view('template/table');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('order/stafforder_edit_view');
 		// $this->load->view('order/stafforder_table_view');
 		$this->load->view('template/footer');
@@ -151,7 +151,7 @@ class order extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('order/plan_view_index');
 		$this->load->view('template/footer');	
 	}
@@ -161,7 +161,7 @@ class order extends CI_Controller {
 	{		
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$data['query']=$this->order_model->showcatgory();
 		$this->load->view('order/catagory_menu_forproduct',$data);
 		$this->load->view('template/footer');
@@ -171,7 +171,7 @@ class order extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('order/product_view_index');
 		$this->load->view('template/footer');	
 	}	
@@ -184,7 +184,7 @@ class order extends CI_Controller {
 		
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('product/allowItem_view_index');
 		$this->load->view('template/footer');	
 	}
@@ -193,7 +193,7 @@ class order extends CI_Controller {
 	{
 		$this->load->view('members/chksession');
 		$this->load->view('template/header');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('report/Report_detail_print_forstaff');
 		$this->load->view('template/footer');
 	}
@@ -217,7 +217,7 @@ class order extends CI_Controller {
 	{
 		$this->load->view('template/header');
 		$this->load->view('members/chksession');
-		$this->load->view('NavMenuV2');
+		$this->load->view('navmenu');
 		$this->load->view('blank');
 		$this->load->view('template/footer');	
 	}
