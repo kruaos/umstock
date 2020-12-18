@@ -108,7 +108,8 @@ class order extends CI_Controller {
 		$this->load->view('NavMenuV2');
 		$this->load->view('order/stafforder_input_view');
 		$this->load->view('order/stafforder_table_view');
-		$this->load->view('template/footer');
+		// $this->load->view('template/footer');
+		$this->load->view('template/tb-footer');
 	}
 
 	public function Staff_add_order()
@@ -127,11 +128,22 @@ class order extends CI_Controller {
 //  -----------------------------
 // เพิ่มส่วนแก้ไข การบันทึกแก้ไขรายการรับจ่ายสินค้า 
 //  -----------------------------
-	// public function stafforderedit()
+	public function staffOrderEdit()
+	{
+		$this->load->view('template/header');
+		// $this->load->view('template/table');
+		$this->load->view('members/chksession');
+		$this->load->view('NavMenuV2');
+		$this->load->view('order/stafforder_edit_view');
+		// $this->load->view('order/stafforder_table_view');
+		$this->load->view('template/footer');
+		// $this->load->view('template/tb-footer');
+	}
+	// public function staffOrderUpdate()
 	// {
 	// 	$orderFileID=$this->uri->segment('3');
 	// 	$categoryID=$this->uri->segment('4');
-	// 	$this->order_model->del_order_from_tb_orderfile($orderFileID,$categoryID);
+	// 	$this->order_model->update_order_from_tb_orderfile($orderFileID,$categoryID);
 	// }
 
 
@@ -213,4 +225,3 @@ class order extends CI_Controller {
 
 
 }
-?>
