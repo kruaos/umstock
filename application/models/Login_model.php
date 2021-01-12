@@ -39,8 +39,7 @@ class login_model  extends CI_Model
           }
         }
       }
-
-      exit;
+      exit();
   }
 
  public function log_customer_use()
@@ -61,4 +60,3 @@ class login_model  extends CI_Model
 
          // echo"<pre>";print_r($query->result());echo"1</pre>"; exit;
 }
-?>
