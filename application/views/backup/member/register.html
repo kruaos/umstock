@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <TITLE>Member ระบบสมาชิก</TITLE></HEAD>
+<BODY>
+    <title>UMStock</title>
+      <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+    
+      <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */ 
+        .navbar {
+          margin-bottom: 0;
+          border-radius: 0;
+        }
+        
+        /* Add a gray background color and some padding to the footer */
+        footer {
+          background-color: #f2f2f2;
+          padding: 25px;
+        }
+      </style>
+    </head>
+    <body>
+    
+    
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+     <h3 class="text-muted"><a href ='../index.php'>UMStock</a></h3>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    
+<div class="container">
+
+    <div style="margin-bottom:0">
+<H1>:: Register ::</H1>
+<FORM METHOD="POST" ACTION="register2.php">
+<TABLE CELLSPACING="2">
+    <TR> 
+      <TD><B>ชื่อเข้าใช้ :</B> </TD>
+	  <TD><INPUT NAME="user_reg" TYPE="text"> * </TD>
+    </TR>
+    <TR> 
+      <TD><B>รหัสผ่าน : </B></TD>
+      <TD><INPUT NAME="pass_reg" TYPE="password"> * </TD>
+    </TR>
+</table>   
+ข้อมูลส่วนตัว
+          <hr> 
+<table>
+    <TR> 
+      <TD><B>ชื่อ - สกุล :</B> </TD>
+      <TD><INPUT NAME="name_reg" TYPE="text"> * </TD>
+    </TR>
+    <TR> 
+      <TD><B>กอง : </B></TD>
+      <TD>
+            <select name="department" size="6" >
+              <option value="สำนักปลัด">สำนักปลัด</option>
+              <option value="กองการศึกษา">กองการศึกษา</option>
+              <option value="กองคลัง">กองคลัง</option>
+              <option value="กองช่าง">กองช่าง</option>
+              <option value="กองสาธารณสุขฯ">กองสาธารณสุขฯ</option>
+              <option value="กองสวัสดิการ">กองสวัสดิการ</option>
+            </select>
+</TD>
+
+    </TR>
+    <TR> 
+      <TD><B>ฝ่าย : </B></TD>
+      <TD><INPUT NAME="division" TYPE="text" SIZE="26"> * </TD>
+    </TR>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD><INPUT TYPE="Submit" value="ลงทะเบียน"> <INPUT TYPE="Reset" value="ยกเลิก"></TD>
+    </TR>
+</TABLE>
+</FORM>
+</div>
+</div>
+
+</BODY>
+</HTML>
