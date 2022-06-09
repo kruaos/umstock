@@ -57,7 +57,7 @@ class order extends CI_Controller {
 		$this->load->view('template/header_plus_table');
 		$this->load->view('members/chksession');
 		$this->load->view('navmenu');
-		$this->load->view('order/userorder_view_v2', $data);
+		$this->load->view('order/userorder_view_v3', $data);
 		$this->load->view('template/footer_plus_table');
 	}
 

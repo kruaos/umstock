@@ -54,22 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </li>
 <!-- เมนูที่ 2 -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-car"></i> ส่วนขอใช้รถ</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown05">
-          <a class="dropdown-item" href="<?php echo site_url('/carorder/caruserorder');?>">3.1. ขออนุญาตใช้รถส่วนกลาง </a>
-          <a class="dropdown-item" href="<?php echo site_url('/oilorder/oilbooking');?>">3.2. ขอเบิกน้ำมันเชื้อเพลิง </a>
-          <a class="dropdown-item text-danger" href="<?php echo site_url('/carorder/carfixorder');?>">3.3. ขออนุญาตซ่อมรถ </a>
-          <hr>
-          <a class="dropdown-item" href="<?php echo site_url('/approvaled/carapproval');?>">3.4. บันทึกการอนุญาต </a>
-          <a class="dropdown-item" href="<?php echo site_url('/report/carprintorder');?>">3.5. พิมพ์ใบเบิก / ใบขออนุญาต </a>
-          <a class="dropdown-item" href="<?php echo site_url('/carorder/carincrease');?>">3.6. เพิ่ม/ถอน คุรุภัณฑ์ รถ </a>
-          <hr>
-          <a class="dropdown-item" href="<?php echo site_url('/carorder/carmemberreport');?>">3.7. แสดงตารางข้อมูลรถ </a>
-          <a class="dropdown-item" href="<?php echo site_url('/carorder/carreportshow');?>">3.8. แสดงรายงานขอใช้รถ </a>
-          <a class="dropdown-item" href="<?php echo site_url('/oilorder/oilordershow');?>">3.9. แสดงรายงานการเบิกน้ำมัน  </a>
-        </div>
-      </li>
+    
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-shield-alt"></i> ส่วนเจ้าหน้าที่</a>

@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$setdb=0;
+$setdb=1;
 if ($setdb==1){
     $website = 'http://localhost/umstock/';
 }else if($setdb==0){

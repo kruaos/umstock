@@ -45,7 +45,7 @@ class home extends CI_Controller {
 		$this->load->view('navmenu');
 		$this->load->view('main_view');
 		$this->load->view('report/Report_Oder_show');
-		$this->load->view('report/report_car_order_show',$data);
+		// $this->load->view('report/report_car_order_show',$data);
 		$this->load->view('template/footer');
 		}else{
 			redirect(site_url('/home/index'));

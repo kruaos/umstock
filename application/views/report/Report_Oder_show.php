@@ -29,7 +29,7 @@ $fullname=$this->session->userdata('fullname');
       <tbody>
       <?php 
       $num=0;
-      $sql = "select * from tb_order where memberID=$sess_memberid and status<>0 "; 
+      $sql = "SELECT * from tb_order where memberID=$sess_memberid and status<>0 order by orderID desc"; 
       $rs = $this->db->query($sql);
       foreach ($rs->result() as $row) {
         $memberID = $row->memberID; 

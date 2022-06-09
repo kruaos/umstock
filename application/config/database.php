@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$setdb=0;
+$setdb=1;
 if ($setdb==1){
 //ongound
     $username="root";

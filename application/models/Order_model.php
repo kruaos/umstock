@@ -11,6 +11,8 @@ class order_model  extends CI_Model
     $this->db->where('c.catestatus',0);
     $this->db->from('tb_category as c');
     $this->db->join('tb_plan as p','p.planid = c.planid');
+    $this->db->order_by('categoryID', 'DESC');
+    $this->db->order_by('c.planID', 'DESC');
     $query=$this->db->get();
     return $query->result(); 
   }
